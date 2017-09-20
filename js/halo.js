@@ -1,3 +1,4 @@
+//大鱼喂小鱼圆圈
 var haloObj = function(){
 	this.x = [];
 	this.y = [];

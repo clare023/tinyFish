@@ -12,7 +12,7 @@ aneObj.prototype.num = 50;//海葵数量
 aneObj.prototype.init = function(){
 	for(var i = 0;i < this.num; i++){
 		this.rootx[i] = i*16 + Math.random()*20;//间隔16，[0,1)更随机
-		this.headx[i] = this.rootx[i];//海葵高度
+		this.headx[i] = this.rootx[i];//海葵头部x
 		this.headyfirst[i] = canHeight - 250 + Math.random() * 50;
 		this.amp[i] = Math.random() * 50 + 30;
 	}
