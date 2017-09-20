@@ -9,13 +9,13 @@ function momFruitsCollision(){
 				//fruit eaten
 				fruit.dead(i);
 				data.fruitNum++;
-				mom.momBodyCount++;
+				mom.momBodyCount++;//身体升级
 				if(mom.momBodyCount > 7){
 					mom.momBodyCount = 7;
 				}
 				if(fruit.fruitType[i] == "blue")//blue
 				{
-					data.double = 2;
+					data.double = 2;//翻倍
 				}
 				wave.born(fruit.x[i],fruit.y[i]);
 			}
@@ -26,6 +26,7 @@ function momFruitsCollision(){
 }
 //mom baby collision
 function momBabyCollision(){
+	//扑捉到果实才可以喂小鱼
 	if(data.fruitNum > 0 && !data.gameOver){
 		var l = calLength2(mom.x,mom.y,baby.x,baby.y);
 		if(l < 900){

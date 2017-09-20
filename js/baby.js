@@ -8,7 +8,7 @@ var babyObj = function(){
 	
 	this.babyEyeTimer = 0;
 	this.babyEyeCount = 0;
-	this.babyEyeInterval = 1000;
+	this.babyEyeInterval = 1000;//当前这张图片持续时间
 	
 	this.babyBodyTimer = 0;
 	this.babyBodyCount = 0;
@@ -41,7 +41,7 @@ babyObj.prototype.draw = function(){
 	//baby eye
 	this.babyEyeTimer += deltaTime;
 	if(this.babyEyeTimer > this.babyEyeInterval){
-		this.babyEyeCount = (this.babyEyeCount + 1) % 2;
+		this.babyEyeCount = (this.babyEyeCount + 1) % 2;//执行下一帧，不超过2
 		this.babyEyeTimer %= this.babyEyeInterval;
 		
 		if(this.babyEyeCount == 0){
@@ -56,7 +56,8 @@ babyObj.prototype.draw = function(){
 	this.babyBodyTimer += deltaTime;
 	if(this.babyBodyTimer > 300){
 		this.babyBodyCount = (this.babyBodyCount + 1);
-		this.babyBodyTimer %= 300;
+		this.babyBodyTimer %= 300;//计数器归零
+		//停在变白的一帧
 		if(this.babyBodyCount > 19){
 			this.babyBodyCount = 19;
 			//game over

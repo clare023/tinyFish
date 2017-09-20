@@ -1,3 +1,4 @@
+//涟漪 pool 检测是否有闲置物体 半径变大 颜色减弱
 var waveObj = function(){
 	this.x = [];
 	this.y = [];
@@ -43,7 +44,7 @@ waveObj.prototype.born = function(x,y){
 			this.x[i] = x;
 			this.y[i] = y;
 			//born 
-			return;
+			return;//只需要一个
 		}
 	}
 }

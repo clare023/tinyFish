@@ -1,5 +1,5 @@
 var momObj = function(){
-	this.x;
+	this.x;//位置
 	this.y;
 	this.angle;
 
@@ -16,15 +16,16 @@ var momObj = function(){
 momObj.prototype.init = function(){
 	this.x = canWidth * 0.5;
 	this.y = canHeight * 0.5;
-	this.angle = 0;
+	this.angle = 0;//旋转角度
 
 }
 momObj.prototype.draw = function(){
 	//lerp x,y
+	//使得当前值趋向于一个目标值
 	this.x = lerpDistance(mx,this.x,0.98);
 	this.y = lerpDistance(my,this.y,0.98);
 	
-	//delta angle
+	//delta angle 角度差
 	//Math.atan(y,x)
 	var deltaY = my - this.y;
 	var deltaX = mx - this.x;
@@ -54,13 +55,14 @@ momObj.prototype.draw = function(){
 	}
 	
 	ctx1.save();
+	//移动原点
 	ctx1.translate(this.x,this.y);
+	//旋转
 	ctx1.rotate(this.angle);
 	var momTailCount = this.momTailCount;
 	ctx1.drawImage(momTail[momTailCount],-momTail[momTailCount].width * 0.5 + 30,-momTail[momTailCount].height * 0.5);
 	var momBodyCount = this.momBodyCount;
-	if(data.double == 1)//ora.
-	
+	if(data.double == 1)//ora.	
 	{
 		ctx1.drawImage(momBodyOra[momBodyCount],-momBodyOra[momBodyCount].width * 0.5,-momBodyOra[momBodyCount].height * 0.5);
 	}
